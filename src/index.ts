@@ -2,8 +2,10 @@ import express, { Request, Response } from "express";
 import "dotenv/config";
 import { rootRouter } from "./router/rootRouter";
 import connection from "./utils/database";
+import WebSocket from "ws";
+import ws from "./utils/ws";
 
-const main = async () => {
+const mainAPI = async () => {
   const app = express();
   const PORT = process.env.PORT ?? 4000;
   const conn = connection;
@@ -16,4 +18,11 @@ const main = async () => {
   });
 };
 
-main();
+const mainWS = async () => {
+  const socket = ws;
+  socket.getConnection();
+  socket.getSubscribe();
+};
+
+mainAPI();
+mainWS();

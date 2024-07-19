@@ -1,2 +1,2 @@
 # Boshin-Server-Node
-Unity Game Server with Boshin
+Boshin Server with Node.js
